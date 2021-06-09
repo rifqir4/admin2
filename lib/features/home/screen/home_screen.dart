@@ -1,5 +1,4 @@
 import 'package:admin2/core/screen/main_screen.dart';
-import 'package:admin2/core/widget/side_menu.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,12 +15,18 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Text(
                   "Dashboard",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.blue, letterSpacing: 1.2),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.blue,
+                      letterSpacing: 1.2),
                 ),
                 Spacer(),
                 Container(
                   padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(5)),
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(5)),
                   child: Row(
                     children: [
                       CircleAvatar(
