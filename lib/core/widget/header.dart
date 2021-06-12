@@ -17,12 +17,18 @@ class Header extends StatelessWidget {
     return Row(
       children: [
         if (!Responsive.isDesktop(context)) ...[
-          IconButton(onPressed: context.read<GlobalProvider>().sideMenuControl, icon: Icon(Icons.menu)),
+          IconButton(
+              onPressed: context.read<GlobalProvider>().sideMenuControl,
+              icon: Icon(Icons.menu)),
           SizedBox(width: 20),
         ],
         Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.blue, letterSpacing: 1.2),
+          style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.blue,
+              letterSpacing: 1.2),
         ),
         Spacer(),
         Text(
@@ -42,7 +48,8 @@ class Header extends StatelessWidget {
                 CustomDialog.loadingDialog(context);
                 await context.read<AuthProvider>().logout();
                 Navigator.pop(context);
-                Navigator.pushNamedAndRemoveUntil(context, RouteConst.login, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, RouteConst.login, (route) => false);
                 break;
               default:
             }
@@ -50,7 +57,11 @@ class Header extends StatelessWidget {
           itemBuilder: (context) => [
             PopupMenuItem(
               value: 'Logout',
-              child: Row(children: [Icon(Icons.logout), SizedBox(width: 8), Text("Logout")]),
+              child: Row(children: [
+                Icon(Icons.logout),
+                SizedBox(width: 8),
+                Text("Logout")
+              ]),
             ),
           ],
         )

@@ -24,8 +24,12 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.blue.shade700,
       body: Center(
         child: Container(
-          padding: Responsive.isDesktop(context) ? EdgeInsets.symmetric(vertical: 15, horizontal: 50) : EdgeInsets.symmetric(vertical: 15, horizontal: 35),
-          margin: Responsive.isMobile(context) ? EdgeInsets.symmetric(horizontal: 15) : EdgeInsets.all(0),
+          padding: Responsive.isDesktop(context)
+              ? EdgeInsets.symmetric(vertical: 15, horizontal: 50)
+              : EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+          margin: Responsive.isMobile(context)
+              ? EdgeInsets.symmetric(horizontal: 15)
+              : EdgeInsets.all(0),
           width: 500,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -57,7 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     TextFormField(
                       controller: _usernameController,
-                      decoration: InputDecoration(prefixIcon: Icon(Icons.person), hintText: "Type your username"),
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.person),
+                          hintText: "Type your username"),
                       validator: Validator.cannotEmpty,
                       textInputAction: TextInputAction.next,
                     ),
@@ -74,7 +80,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextFormField(
                       controller: _passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(prefixIcon: Icon(Icons.lock), hintText: "Type your password"),
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.lock),
+                          hintText: "Type your password"),
                       validator: Validator.cannotEmpty,
                       textInputAction: TextInputAction.next,
                     ),
@@ -84,7 +92,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(vertical: 12), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)), textStyle: TextStyle(fontSize: 15, letterSpacing: 1.2, fontWeight: FontWeight.bold)),
+                    style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 12),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50)),
+                        textStyle: TextStyle(
+                            fontSize: 15,
+                            letterSpacing: 1.2,
+                            fontWeight: FontWeight.bold)),
                     child: Text("LOGIN"),
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
@@ -92,7 +107,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         final password = _passwordController.text;
                         print(username + password);
                         CustomDialog.loadingDialog(context);
-                        final result = await context.read<AuthProvider>().login();
+                        final result =
+                            await context.read<AuthProvider>().login();
                         if (result) {
                           Navigator.pop(context);
                           Navigator.pushNamed(context, RouteConst.home);
