@@ -17,18 +17,12 @@ class SideMenu extends StatelessWidget {
                 child: Center(
               child: Text(
                 "Admin CRM",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    letterSpacing: 1.2),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, letterSpacing: 1.2),
               ),
             )),
-            DrawerListTile(
-                title: "Dashboard",
-                icon: Icons.speed,
-                routeName: RouteConst.home),
-            DrawerListTile(
-                title: "Akun", icon: Icons.group, routeName: RouteConst.akun),
+            DrawerListTile(title: "Dashboard", icon: Icons.speed, routeName: RouteConst.home),
+            DrawerListTile(title: "Presensi", icon: Icons.map, routeName: RouteConst.presensi),
+            DrawerListTile(title: "Akun", icon: Icons.group, routeName: RouteConst.akun),
           ],
         ),
       ),
