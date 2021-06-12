@@ -1,3 +1,4 @@
+import 'package:admin2/core/settings/route_const.dart';
 import 'package:admin2/core/widget/drawer_list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,21 @@ class SideMenu extends StatelessWidget {
         child: Column(
           children: [
             DrawerHeader(
-                child: Text(
-              "Admin CRM",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, letterSpacing: 1.2),
+                child: Center(
+              child: Text(
+                "Admin CRM",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    letterSpacing: 1.2),
+              ),
             )),
-            DrawerListTile(title: "Dashboard", icon: Icons.speed, press: () {}),
-            DrawerListTile(title: "Akun", icon: Icons.group, press: () {}),
+            DrawerListTile(
+                title: "Dashboard",
+                icon: Icons.speed,
+                routeName: RouteConst.home),
+            DrawerListTile(
+                title: "Akun", icon: Icons.group, routeName: RouteConst.akun),
           ],
         ),
       ),
