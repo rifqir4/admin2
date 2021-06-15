@@ -12,7 +12,8 @@ class PresensiMap extends StatefulWidget {
 }
 
 class _PresensiMapState extends State<PresensiMap> {
-  MapController _mapController = new MapController(location: LatLng(0, 0), zoom: 18);
+  MapController _mapController =
+      new MapController(location: LatLng(0, 0), zoom: 18);
   LatLng titik;
 
   Future<LatLng> _getLocation() async {
@@ -61,16 +62,20 @@ class _PresensiMapState extends State<PresensiMap> {
           : MapLayoutBuilder(
               controller: _mapController,
               builder: (context, transformer) {
-                titik = snap.data != null ? snap.data : LatLng(-6.9172416, 107.6149198);
+                titik = snap.data != null
+                    ? snap.data
+                    : LatLng(-6.9172416, 107.6149198);
                 transformer.controller.center = titik;
                 final homeLocation = transformer.fromLatLngToXYCoords(titik);
-                final homeMarkerWidget = _buildMarkerWidget(homeLocation, Colors.blue);
+                final homeMarkerWidget =
+                    _buildMarkerWidget(homeLocation, Colors.blue);
                 return Stack(
                   children: [
                     Map(
                       controller: _mapController,
                       builder: (context, x, y, z) {
-                        final mapUrl = "https://a.tile.openstreetmap.org/$z/$x/$y.png";
+                        final mapUrl =
+                            "https://a.tile.openstreetmap.org/$z/$x/$y.png";
                         return CachedNetworkImage(
                           imageUrl: mapUrl,
                           fit: BoxFit.cover,
@@ -79,24 +84,6 @@ class _PresensiMapState extends State<PresensiMap> {
                       },
                     ),
                     homeMarkerWidget,
-                    Positioned(
-                      child: Align(
-                        alignment: FractionalOffset.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 12.0),
-                          child: ElevatedButton.icon(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-                              textStyle: TextStyle(fontSize: 15, letterSpacing: 1.2),
-                            ),
-                            icon: Icon(Icons.check_circle_outline),
-                            label: Text("Presensi"),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ),
-                    ),
                     Positioned(
                       top: 0,
                       right: 0,

@@ -1,5 +1,4 @@
 import 'package:admin2/features/auth/provider/auth_provider.dart';
-import 'package:admin2/core/provider/global_provider.dart';
 import 'package:admin2/core/settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<GlobalProvider>(create: (_) => GlobalProvider()),
+        // ChangeNotifierProvider<GlobalProvider>(create: (_) => GlobalProvider()),
         ChangeNotifierProvider<AuthProvider>(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(

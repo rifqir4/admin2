@@ -3,14 +3,14 @@ import 'package:admin2/core/settings/route_const.dart';
 import 'package:admin2/core/widget/header.dart';
 import 'package:flutter/material.dart';
 
-class AkunScreen extends StatelessWidget {
-  const AkunScreen({Key key}) : super(key: key);
+class ContactScreen extends StatelessWidget {
+  const ContactScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MainScreen(
       header: Header(
-        title: "Akun",
+        title: "Contaact",
       ),
       body: Column(
         children: [
@@ -20,7 +20,7 @@ class AkunScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Daftar Akun",
+                      "Daftar Contact",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
@@ -48,7 +48,7 @@ class AkunScreen extends StatelessWidget {
                       icon: Icon(Icons.add),
                       splashRadius: 20,
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteConst.akunTambah);
+                        Navigator.pushNamed(context, RouteConst.contactTambah);
                       },
                     ),
                     IconButton(
