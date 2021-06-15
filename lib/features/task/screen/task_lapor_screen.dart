@@ -30,81 +30,45 @@ class TaskLaporScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "New Task Form",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      "Daily Report Form",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     SizedBox(height: 25),
                     InputTemplate(
-                      lable: "Title",
+                      lable: "Task Id",
+                      inputField: FormBuilderTextField(
+                        name: 'taskId',
+                        enabled: false,
+                        decoration: AppTheme.inputFieldTheme,
+                        initialValue: "12",
+                      ),
+                    ),
+                    InputTemplate(
+                      lable: "Task Title",
                       inputField: FormBuilderTextField(
                         name: 'title',
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                            hintText: "Type the new task title",
-                            prefixIcon: Icon(Icons.edit)),
+                        enabled: false,
+                        decoration: AppTheme.inputFieldTheme,
                         textInputAction: TextInputAction.next,
+                        initialValue: "Visitng ke Rumah Sakit",
                       ),
                     ),
                     InputTemplate(
                       lable: "Clinic",
-                      inputField: FormBuilderSearchableDropdown(
+                      inputField: FormBuilderTextField(
                         name: 'clinic',
-                        autoFocusSearchBox: true,
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                          hintText: "Select clinic",
-                          prefixIcon: Icon(Icons.build),
-                        ),
-                        items: ["RS Harapan", "RS Mantap Jiwa"],
-                        onChanged: (val) => print(val),
-                      ),
-                    ),
-                    InputTemplate(
-                      lable: "Label",
-                      inputField: FormBuilderTextField(
                         enabled: false,
-                        name: 'label',
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                          hintText: "Clinic prioriy label",
-                        ),
+                        decoration: AppTheme.inputFieldTheme,
                         textInputAction: TextInputAction.next,
+                        initialValue: "RS. Bayangkara",
                       ),
                     ),
-                    InputTemplate(
-                      lable: "Job",
-                      inputField: FormBuilderDropdown(
-                        name: 'job',
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                          hintText: "Select job desc",
-                        ),
-                        items: [
-                          DropdownMenuItem(
-                              child: Text("Visit"), value: "visit"),
-                          DropdownMenuItem(
-                              child: Text("Delivery"), value: "deliv")
-                        ],
-                      ),
+                    SizedBox(height: 15),
+                    Text(
+                      "Daily Stock Form",
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    InputTemplate(
-                      lable: "Description",
-                      inputField: FormBuilderTextField(
-                        name: 'desc',
-                        maxLines: 3,
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                          hintText: "Task description here..",
-                        ),
-                      ),
-                    ),
-                    InputTemplate(
-                      lable: "Deadline Date",
-                      inputField: FormBuilderDateTimePicker(
-                        alwaysUse24HourFormat: true,
-                        name: 'deadline',
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                          prefixIcon: Icon(Icons.calendar_today),
-                          hintText: "Deadline date here..",
-                        ),
-                      ),
-                    ),
+                    SizedBox(height: 25),
                     Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,

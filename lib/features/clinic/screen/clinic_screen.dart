@@ -3,14 +3,14 @@ import 'package:admin2/core/settings/route_const.dart';
 import 'package:admin2/core/widget/header.dart';
 import 'package:flutter/material.dart';
 
-class AkunScreen extends StatelessWidget {
-  const AkunScreen({Key key}) : super(key: key);
+class ClinicScreen extends StatelessWidget {
+  const ClinicScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MainScreen(
       header: Header(
-        title: "Account",
+        title: "Clinic",
       ),
       body: Column(
         children: [
@@ -20,7 +20,7 @@ class AkunScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Account List",
+                      "Clinic List",
                       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Spacer(),
@@ -64,24 +64,24 @@ class AkunScreen extends StatelessWidget {
                     child: DataTable(
                       columns: [
                         DataColumn(label: Text("Id", style: TextStyle(fontWeight: FontWeight.bold))),
-                        DataColumn(label: Text("Nama", style: TextStyle(fontWeight: FontWeight.bold))),
-                        DataColumn(label: Text("Role", style: TextStyle(fontWeight: FontWeight.bold))),
+                        DataColumn(label: Text("Clinic Name", style: TextStyle(fontWeight: FontWeight.bold))),
+                        DataColumn(label: Text("Status", style: TextStyle(fontWeight: FontWeight.bold))),
                       ],
                       rows: [
                         DataRow(cells: [
                           DataCell(Text("1")),
-                          DataCell(Text("Rifan")),
-                          DataCell(Text("Admin")),
+                          DataCell(Text("RS. Bayangkara")),
+                          DataCell(Text("P0")),
                         ]),
                         DataRow(cells: [
                           DataCell(Text("2")),
-                          DataCell(Text("Rifan")),
-                          DataCell(Text("Admin")),
+                          DataCell(Text("RSU Bungsu ")),
+                          DataCell(Text("P4")),
                         ]),
                         DataRow(cells: [
                           DataCell(Text("3")),
-                          DataCell(Text("Rifan")),
-                          DataCell(Text("Admin")),
+                          DataCell(Text("RS. Santosa")),
+                          DataCell(Text("P3")),
                         ]),
                       ],
                     ),

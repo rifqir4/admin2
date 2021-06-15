@@ -31,17 +31,14 @@ class TaskTambahScreen extends StatelessWidget {
                   children: [
                     Text(
                       "New Task Form",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     SizedBox(height: 25),
                     InputTemplate(
                       lable: "Title",
                       inputField: FormBuilderTextField(
                         name: 'title',
-                        decoration: AppTheme.inputFieldTheme.copyWith(
-                            hintText: "Type the new task title",
-                            prefixIcon: Icon(Icons.edit)),
+                        decoration: AppTheme.inputFieldTheme.copyWith(hintText: "Type the new task title", prefixIcon: Icon(Icons.edit)),
                         textInputAction: TextInputAction.next,
                       ),
                     ),
@@ -52,7 +49,6 @@ class TaskTambahScreen extends StatelessWidget {
                         autoFocusSearchBox: true,
                         decoration: AppTheme.inputFieldTheme.copyWith(
                           hintText: "Select clinic",
-                          prefixIcon: Icon(Icons.build),
                         ),
                         items: ["RS Harapan", "RS Mantap Jiwa"],
                         onChanged: (val) => print(val),
@@ -76,12 +72,7 @@ class TaskTambahScreen extends StatelessWidget {
                         decoration: AppTheme.inputFieldTheme.copyWith(
                           hintText: "Select job desc",
                         ),
-                        items: [
-                          DropdownMenuItem(
-                              child: Text("Visit"), value: "visit"),
-                          DropdownMenuItem(
-                              child: Text("Delivery"), value: "deliv")
-                        ],
+                        items: [DropdownMenuItem(child: Text("Visit"), value: "visit"), DropdownMenuItem(child: Text("Delivery"), value: "deliv")],
                       ),
                     ),
                     InputTemplate(
@@ -100,7 +91,7 @@ class TaskTambahScreen extends StatelessWidget {
                         alwaysUse24HourFormat: true,
                         name: 'deadline',
                         decoration: AppTheme.inputFieldTheme.copyWith(
-                          prefixIcon: Icon(Icons.calendar_today),
+                          suffixIcon: Icon(Icons.calendar_today),
                           hintText: "Deadline date here..",
                         ),
                       ),

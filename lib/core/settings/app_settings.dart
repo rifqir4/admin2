@@ -5,6 +5,7 @@ import 'package:admin2/core/screen/unknown_screen.dart';
 import 'package:admin2/core/settings/route_const.dart';
 import 'package:admin2/features/akun/screen/akun_screen.dart';
 import 'package:admin2/features/auth/screen/login_screen.dart';
+import 'package:admin2/features/clinic/screen/clinic_screen.dart';
 import 'package:admin2/features/contact/screen/contact_screen.dart';
 import 'package:admin2/features/contact/screen/contact_tambah_screen.dart';
 import 'package:admin2/features/home/screen/home_screen.dart';
@@ -27,6 +28,7 @@ class AppSettings {
     if (settings.name == RouteConst.akunTambah) page = AkunTambahScreen();
     if (settings.name == RouteConst.contact) page = ContactScreen();
     if (settings.name == RouteConst.contactTambah) page = ContactTambahScreen();
+    if (settings.name == RouteConst.clinic) page = ClinicScreen();
     if (settings.name == RouteConst.task) page = TaskScreen();
     if (settings.name == RouteConst.taskTambah) page = TaskTambahScreen();
     if (settings.name == RouteConst.taskLapor) page = TaskLaporScreen();
@@ -45,8 +47,7 @@ class AppSettings {
   }
 
   static openDrawer(BuildContext context) {
-    final ScaffoldState scaffoldState =
-        context.findRootAncestorStateOfType<ScaffoldState>();
+    final ScaffoldState scaffoldState = context.findRootAncestorStateOfType<ScaffoldState>();
     scaffoldState.openDrawer();
   }
 }

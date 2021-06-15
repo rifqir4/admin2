@@ -6,6 +6,7 @@ class RouteConst {
   static final akunTambah = '/akun/tambah';
   static final contact = '/contact';
   static final contactTambah = '/contact/tambah';
+  static final clinic = '/clinic';
   static final task = '/task';
   static final taskTambah = '/task/tambah';
   static final taskLapor = '/task/lapor';
